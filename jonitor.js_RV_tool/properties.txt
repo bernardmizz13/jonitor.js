@@ -1,0 +1,2 @@
+// b // registerNewAccount // return jonitor.registration.wrongLengths // console.error("\n\nError: registration should not have been called since there were invalid lengths\n\n\n"); jonitor.registration.wrongLengths = false //
+// a // getRankingsLocalStorage // return !jonitor.compareUserDetails() // console.error("\n\nError: user credentials do not match from getRankingsLocalStorage\n\n\n"); //
