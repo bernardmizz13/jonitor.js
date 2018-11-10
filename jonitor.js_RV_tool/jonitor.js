@@ -20,13 +20,7 @@ var jonitor = {
     /**
      * List of allowed events
      */
-    allowedEvents: "registerNewAccount, checkPasswordConfirmation, inputtingErrorFound, sortPlayers, checkUsernameAvailability, logIn," +
-    "disableBottomForm, validateRegistrationModification, checkAmendedName, deleteUserData, checkElementLength, checkChosenQuestion," +
-    "getLocalStorage, getSampleRanksLocalStorage, checkUsername, checkPassword, setSampleRanksLocalStorage, setRankingsLocalStorage," +
-    "getRankingsLocalStorage, getLoggedInUser, getLogOutLocalStorage, getCurrentViewMode, getCurrentColor, setCurrentViewMode, setView, setCurrentColor, setCurrentVolume," +
-    "checkAmendedSecurity, checkAmendedPassword, getOptionsLocalStorage, storeLocalStorage, saveItem, validateForgot, checkForgotUsername," +
-    "inputForgotErrorFound, checkForgotSecurityQuestion, checkForgotSecurityAnswer, inputLoginErrorFound, setOptionsLocalStorage, changePassword," +
-    "startMovementReading, startMovementReading, setPanel, runSquare, checkXaxis, checkYaxis, checkCollision, runGameOver, storeGameLocalStorage,",
+    allowedEvents: "",
 
     /**
      * 2-d array that will store the rules in the structure: before/after, event, condition and action
