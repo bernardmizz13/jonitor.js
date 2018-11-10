@@ -55,7 +55,7 @@ In order to instrument the required functions, the user must include the name of
 
 ### Installation
 
-To successfully use **jonitor.js** include the following in your respective HTML/PHP file.
+To successfully use **jonitor.js** include the following in your respective HTML/PHP file:
 
 ```
 <script  type="text/javascript" src="jonitor.js"></script>
