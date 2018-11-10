@@ -48,3 +48,15 @@ or false, then the condition must be `return true`:
 ```
 // after // checkCollision // return true // JsRV.updateCarPosition(); //
 ```
+
+### Captured events
+
+In order to instrument the required functions, the user must include the name of the functions comma seperated in object `allowedEvents`.
+
+### Installation
+
+To successfully use **jonitor.js** include the following in your respective HTML/PHP file.
+
+```
+<script  type="text/javascript" src="jonitor.js"></script>
+```
