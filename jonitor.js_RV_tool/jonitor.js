@@ -380,14 +380,14 @@ var jonitor = {
 
             //this is done to seperate the functions in the profiler
 
-			//execute the before conditions and actions
-			jonitor.before(func_name);
+	    //execute the before conditions and actions
+	    jonitor.before(func_name);
 			
-			//calls the original function with the passed arguments
-			jonitor.returnValue = func.apply(this, jonitor.currentArgs);
+	    //calls the original function with the passed arguments
+	    jonitor.returnValue = func.apply(this, jonitor.currentArgs);
 			
-			 //execute the after conditions and actions
-			jonitor.after(func_name);
+	    //execute the after conditions and actions
+	    jonitor.after(func_name);
 
             //if there was a return value return it
             if(typeof jonitor.returnValue != 'undefined') return jonitor.returnValue
