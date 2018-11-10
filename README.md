@@ -20,4 +20,10 @@ Since **jonitor.js** supports JavaScript web applications, **jonitor.js** makes 
 
 ### Properties
 
-Properties are written in the form of a guarded command language and must be included in the file **properties.prts**. Properties are written in the form of **w : e | c -> a** where **w** determines whether the rule should be triggered before or after the captured function, **e** is the event that triggers the condition, and **a** is the command that is executed whenever condition **c** evaluates to true.
+Properties are written in the form of a guarded command language and must be included in the file **properties.prts**. Properties are written in the form of **w : e | c -> a** where **w** determines whether the property should be triggered before or after the captured function, **e** is the event that triggers the condition, and **a** is the command that is executed whenever condition **c** evaluates to true.
+
+An example:
+
+```
+// b // registerNewAccount // return jonitor.registration.invalidLengths // console.error("\n\nError: registration should not have been called since there were invalid lengths\n\n\n");//
+```
