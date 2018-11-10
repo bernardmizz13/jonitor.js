@@ -1,1 +1,3 @@
-
+// b // registerNewAccount // return jonitor.registration.invalidLengths // console.error("\n\nError: registration should not have been called since there were invalid lengths\n\n\n");//
+// a // checkLength // return (jonitor.currentArgs[0].length < jonitor.validLength || jonitor.currentArgs[0].length > jonitor.currentArgs[2]) && jonitor.returnValue // Console.error("\n\nError: length is invalid");\\
+// a // checkCollision // return true // jonitor.updateCarPosition(); //
