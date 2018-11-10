@@ -172,58 +172,6 @@ var jonitor = {
         jonitor.saveRulesLocalStorage();
     },
 
-
-    /*
-    if (rules.charAt(i) === '@' && endRule) {
-        endRule = false
-        //insert array of rule in array of rules
-
-        //duplicate object to have two objects
-        var temp = jQuery.extend(true, {}, tempRule);
-        jonitor.rulesArr.push(temp)
-
-        tempRule = []
-
-        //set the flag to start rules
-        startRule = true
-
-        continueReading = false
-    }
-    else if (rules.charAt(i) === '/' && startEvent) {
-        //reset the flag
-        startEvent = true
-    }
-    else if (rules.charAt(i) === '^' && startEvent) {
-        //reset the flag
-        startEvent = false
-        //push it in list of events
-        jonitor.listOfEvents.push(event)
-        //insert in rules 2d array
-        tempRule.push(event)
-        event = ''
-        //set flag to start the condition
-        startCondition = true
-    }
-    else if (rules.charAt(i) === '#' && startCondition) {
-        //reset the flag
-        startCondition = false
-        //insert in rules 2d array
-        tempRule.push(condition)
-        condition = ''
-        //set the flag to start action
-        startAction = true
-    }
-    else if (rules.charAt(i) === '#' && startAction) {
-        //reset the flag
-        startAction = false
-        //insert in rules 2d array
-        tempRule.push(action)
-        action = ''
-        //set the flag to end rules
-        endRule = true
-    }
-    */
-
     /**
      * Function that returns the index of the applied rule
      *
@@ -273,18 +221,6 @@ var jonitor = {
      */
     getRulesLocalStorage: function(){
         jonitor.rulesArr = JSON.stringify(localStorage.rulesjonitor)
-    },
-
-    /**
-     * Function that returns the users stored for the library
-     *
-     * @returns empty array or array with names
-     */
-    checkRulesLocalStorage: function(){
-        //include this if condition so that no error is encountered during runtime
-        if(typeof localStorage.rulesjonitor === 'undefined'){
-            localStorage.rulesjonitor = JSON.stringify([[]])
-        }
     },
 
     /**
