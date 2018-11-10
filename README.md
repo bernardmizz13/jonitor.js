@@ -22,8 +22,29 @@ Since **jonitor.js** supports JavaScript web applications, **jonitor.js** makes 
 
 Properties are written in the form of a guarded command language and must be included in the file **properties.prts**. Properties are written in the form of **w : e | c -> a** where **w** determines whether the property should be triggered before or after the captured function, **e** is the event that triggers the condition, and **a** is the command that is executed whenever condition **c** evaluates to true.
 
-An example:
+The property’s syntax is:
 
 ```
+// when // event // condition // action //
+```
+* **When** Properties must fire before or after the captured function; if before include a **b**, else if after include an **a**.
+* **Event**  Along with the before or after, the event will trigger the entire property. The event must include the name of the function that needs to be captured.
+* **Condition** The condition is immediately checked when the event triggers the property. Conditions are standard JavaScript code that is executed; hence, they must be included with a **return** in front. To include more than one condition, they must be separated with **||** or **&&**, but only one return statement must exist. The captured function’s arguments may be referred to by including **jonitor.currentArgs**. Here, one may include any references to methods, objects, variables or any other data structure that is defined in JsRV or elsewhere and that can be used to evaluate the condition. However, note that whichever statement is included after return can only be evaluated to true or false.
+* **Action** If the condition evaluates to true, **jonitor** executes the action. Once again, theaction is executed as JavaScript code, and so, any number of statements can be included. Likewise, one may again refer to any defined data structures. The captured event’s return value may be referred to by including **jonitor.returnValue**.
+
+An example:
+```
 // b // registerNewAccount // return jonitor.registration.invalidLengths // console.error("\n\nError: registration should not have been called since there were invalid lengths\n\n\n");//
+```
+Another example:
+
+```
+// a // checkLength // return (jonitor.currentArgs[0].length < jonitor.validLength || jonitor.currentArgs[0].length > jonitor.currentArgs[2]) && jonitor.returnValue // Console.error("\n\nError: length is invalid");\\
+```
+
+If one requires executing the action irrelevant whether or not the condition returns true
+or false, then the condition must be `return true`:
+
+```
+// after // checkCollision // return true // JsRV.updateCarPosition(); //
 ```
