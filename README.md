@@ -46,7 +46,7 @@ If one requires executing the action irrelevant whether or not the condition ret
 or false, then the condition must be `return true`:
 
 ```
-// after // checkCollision // return true // JsRV.updateCarPosition(); //
+// a // checkCollision // return true // jonitor.updateCarPosition(); //
 ```
 
 ### Captured events
