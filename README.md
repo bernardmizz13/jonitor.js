@@ -12,7 +12,7 @@ Runtime verification is a method to verify a system's behaviour at runtime. Runt
 * monitor - the core of the runtime verification that performs the verification
 * properties - the properties that the monitor uses to check the system's behaviour
 
-The monitor must be built according to the system under test, however, in the following sections we will look into how **jonitor.js** achieves instrumentation and how are the properties used.
+Moreover, the monitor must be built according to the system under test. In the following sections we will look into how **jonitor.js** achieves instrumentation and how are the properties used.
 
 ### Instrumentation
 
@@ -20,7 +20,7 @@ Since **jonitor.js** supports JavaScript web applications, **jonitor.js** makes 
 
 ### Properties
 
-Properties are written in the form of a guarded command language and must be included in the file **properties.prts**. Properties are written in the form of **w : e | c -> a** where **w** determines whether the property should be triggered before or after the captured function, **e** is the event that triggers the condition, and **a** is the command that is executed whenever condition **c** evaluates to true.
+Properties are written in the form of a guarded command language and must be included in the file **properties.prts**. Properties take the form of **w : e | c -> a** where **w** determines whether the property should be triggered before or after the captured function, **e** is the event that triggers the condition, and **a** is the command that is executed whenever condition **c** evaluates to true.
 
 The property’s syntax is:
 
@@ -30,7 +30,7 @@ The property’s syntax is:
 * **When** Properties must fire before or after the captured function; if before include a **b**, else if after include an **a**.
 * **Event**  Along with the before or after, the event will trigger the entire property. The event must include the name of the function that needs to be captured.
 * **Condition** The condition is immediately checked when the event triggers the property. Conditions are standard JavaScript code that is executed; hence, they must be included with a **return** in front. To include more than one condition, they must be separated with **||** or **&&**, but only one return statement must exist. The captured function’s arguments may be referred to by including **jonitor.currentArgs**. Here, one may include any references to methods, objects, variables or any other data structure that is defined in **jonitor.js** or elsewhere and that can be used to evaluate the condition. However, note that whichever statement is included after return can only be evaluated to true or false.
-* **Action** If the condition evaluates to true, **jonitor** executes the action. Once again, theaction is executed as JavaScript code, and so, any number of statements can be included. Likewise, one may again refer to any defined data structures. The captured event’s return value may be referred to by including **jonitor.returnValue**.
+* **Action** If the condition evaluates to true, **jonitor** executes the action. Once again, the action is executed as JavaScript code, and so, any number of statements can be included. Likewise, one may again refer to any defined data structures. The captured event’s return value may be referred to by including **jonitor.returnValue**.
 
 An example:
 ```
@@ -51,7 +51,7 @@ or false, then the condition must be `return true`:
 
 ### Captured events
 
-In order to instrument the required functions, the user must include the name of the functions comma seperated in object `allowedEvents`.
+In order to instrument the required functions, the user must include the name of the functions comma seperated in object `allowedEvents`, this is located in **jonitor.js**.
 
 ### Installation
 
