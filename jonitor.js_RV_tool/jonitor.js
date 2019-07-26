@@ -2,7 +2,7 @@
  * Filename    : jonitor.js
  * Author      : Bernard Mizzi
  * Created     : 2018-03-08
- * Last Changed: 2018-05-22
+ * Last Changed: 2019-07-26
  *
  * This library injects code in functions (found in window) to perform AOP runtime verification by
  * storing the arguments and return values of the function.
